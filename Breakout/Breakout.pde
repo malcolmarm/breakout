@@ -13,7 +13,7 @@ import ddf.minim.ugens.*;
 
 //Minim Variables
 Minim minim;
-AudioPlayer bHit, pHit;
+AudioPlayer bHit, pHit, wHit, win, lose, song;
 
 //Colour Pallate
 color[] palette = {#273533, #BA01FF, #00C5BC, #BDE13E, #E5C145, #F93D95};
@@ -60,6 +60,10 @@ void setup() {
   minim = new Minim(this);
   bHit = minim.loadFile("blip1.wav");
   pHit = minim.loadFile("blip2.wav");
+  wHit = minim.loadFile("blip3.wav");
+  win = minim.loadFile("win.wav");
+  lose = minim.loadFile("failure.wav");
+  song = minim.loadFile("intro.wav");
 
   //building arrays==================================================
   brickD = 100;

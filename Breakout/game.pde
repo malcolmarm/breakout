@@ -1,6 +1,8 @@
 void game() {
   background(#EEFFEE);
 
+  song.pause();
+
   //UI display
   textAlign(BOTTOM, LEFT);
   textSize(50);
@@ -32,12 +34,20 @@ void game() {
   if (ballX >= width - ballD/2) {
     ballVX = ballVX * -1;
     ballX = width - ballD/2;
+    wHit.rewind();
+    wHit.play();
   }
   if (ballX <= 0 + ballD/2) {
     ballVX = ballVX * -1;
     ballX = 0 + ballD/2;
+    wHit.rewind();
+    wHit.play();
   }
-  if (ballY <= 0 + ballD/2) ballVY = ballVY * -1;
+  if (ballY <= 0 + ballD/2) {
+    ballVY = ballVY * -1;
+    wHit.rewind();
+    wHit.play();
+  }
   if (ballY >= height - ballD/2) {
     lives = lives - 1;
     ballX = paddleX;

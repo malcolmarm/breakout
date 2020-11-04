@@ -1,4 +1,5 @@
 void intro() {
+  song.play();
   image(gif[frame], 0, 0, width, height);
   frame++;
   if (frame >= gifN) frame = 0;

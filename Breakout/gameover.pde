@@ -3,8 +3,16 @@ void gameover() {
   textAlign(CENTER, CENTER);
   fill(palette[2]);
   textSize(150);
-  if (score < brickN) text("You Lose", width/2, height/2);
-  if (score == brickN) text("You Win", width/2, height/2);
+  if (score < brickN) {
+    text("You Lose", width/2, height/2);
+    lose.rewind();
+    lose.play();
+  }
+  if (score == brickN) {
+    text("You Win", width/2, height/2);
+    win.rewind();
+    win.play();
+  }
 }
 
 void gameoverClicks() {
