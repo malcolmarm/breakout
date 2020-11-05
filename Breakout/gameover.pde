@@ -5,13 +5,9 @@ void gameover() {
   textSize(150);
   if (score < brickN) {
     text("You Lose", width/2, height/2);
-    lose.rewind();
-    lose.play();
   }
   if (score == brickN) {
     text("You Win", width/2, height/2);
-    win.rewind();
-    win.play();
   }
 }
 
@@ -28,5 +24,6 @@ void gameoverClicks() {
     hit[i] = false;
     i++;
   }
+  song.rewind();
   mode = INTRO;
 }

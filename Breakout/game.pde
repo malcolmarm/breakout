@@ -74,7 +74,15 @@ void game() {
   } 
 
   //gameover=====================================================================
-  if (lives <= 0 || score == brickN) mode = GAMEOVER;
+  if (lives <= 0) {
+    mode = GAMEOVER;
+    lose.rewind();
+    lose.play();
+  } else if (score == brickN) {
+    mode = GAMEOVER;
+    win.rewind();
+    win.play();
+  }
 }
 
 void manageBricks(int i) {
